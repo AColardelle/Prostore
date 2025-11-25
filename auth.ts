@@ -89,7 +89,7 @@ export const config = {
     },
     authorized({ request, auth }:any) {
       //check for session card cookie
-      if(!request.cookies.get('sessionCardId')) {
+      if(!request.cookies.get('sessionCartId')) {
         //Generate new session cart id cookie
         const sessionCartId = crypto.randomUUID()
        
@@ -101,7 +101,7 @@ export const config = {
         }
        })
        //set newly generated seesionCartId in the response cookie
-       response.cookies.set('sessionCardId', sessionCartId)
+       response.cookies.set('sessionCartId', sessionCartId)
 
        return response
       } else {
